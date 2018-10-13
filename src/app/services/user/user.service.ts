@@ -8,9 +8,9 @@ import { SettingsService } from '../settings/settings.service';
 export class UserService {
 
   API_URLs = {
-    users: `${this.settingServ.apiURL}/api/users`
+    users: `${this.settingServ.apiURL}`
   };
-
+  url = this.API_URLs.users;
   constructor(
     private http: HttpClient,
     private settingServ: SettingsService
@@ -21,10 +21,10 @@ export class UserService {
     return this.http.get(id);
   }
   postLogin(data) {
-    return this.http.post('http://localhost:3000/login', data);
+    return this.http.post(`${this.url}/login`, data);
   }
 
   postSignup(data) {
-    return this.http.post('http://localhost:3000/signup', data);
+    return this.http.post(`${this.url}/signup`, data);
   }
 }

@@ -8,9 +8,11 @@ import { HttpClient } from '@angular/common/http';
 export class BookService {
 
   API_URLs = {
-    users: `${this.settingServ.apiURL}/api/users`
+    users: `${this.settingServ.apiURL}/bookmenu`
   };
-   url: any = `http://localhost:3000/bookmenu`;
+
+   url = this.API_URLs.users;
+
 
   constructor(
     private settingServ: SettingsService,
