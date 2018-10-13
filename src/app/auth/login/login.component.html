@@ -1,0 +1,22 @@
+<div fxLayout="row" fxLayoutAlign="center center" [ngStyle]="{'margin-top': '10%'}">
+  <section fxLayout="column" fxFlex="100%" fxFlex.gt-xs="50%" fxFlex.gt-sm="25%">
+    <h3 [ngStyle.lt-sm]="{'paddingLeft': '10px'}">Login</h3>
+    <form name="loginForm" #loginForm="ngForm" (ngSubmit)="userLogin()" fxLayout="column" fxFlex="100%" [ngStyle.xs]="{'margin': '3%'}">
+      <mat-form-field>
+        <input matInput placeholder="username" type="text" name="username" [(ngModel)]="login.username" required>
+        <mat-error>
+          Enter valid username
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Password" type="password" name="password" [(ngModel)]="login.password" required minlength="6">
+        <mat-error>
+          Minimum password length should be 6
+        </mat-error>
+      </mat-form-field>
+      <div>
+        <button mat-raised-button color="primary" [disabled]="loginForm.pristine || loginForm.invalid">Login</button>
+      </div>
+    </form>
+  </section>
+</div>

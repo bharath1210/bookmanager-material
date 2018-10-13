@@ -1,0 +1,20 @@
+<div fxLayout="row" fxLayoutAlign="center center" [ngStyle]="{'margin-top': '10%'}">
+  <section fxLayout="column" fxFlex="100%" fxFlex.gt-xs="50%" fxFlex.gt-sm="25%">
+    <form name="myForm" #myForm="ngForm" (ngSubmit)="createBook(myForm)" fxLayout="column" fxFlex="100%" [ngStyle.xs]="{'margin': '3%'}">
+      <mat-form-field>
+        <input type="text" matInput placeholder="ISBN"  [(ngModel)]="user.ISBN" name="ISBN" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input type="text" matInput placeholder="Author" [(ngModel)]="user.Author" name="Author" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input type="text" matInput placeholder="Title" [(ngModel)]="user.Title" name="Title" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input type="month" matInput placeholder="Date" [(ngModel)]="user.Year" name="Year" required >
+      </mat-form-field>
+      <button type="submit" mat-raised-button color="accent" [disabled]="myForm.invalid">Create</button>
+    </form>
+  </section>
+  
+</div>

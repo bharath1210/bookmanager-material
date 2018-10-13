@@ -1,0 +1,19 @@
+<div fxFlex="row">
+  <div fxFlex fxLayout="column">
+    <form name="myForm" #myForm="ngForm" (ngSubmit)="editBook()" fxLayout="column" fxFlexAlign="center">
+      <mat-form-field>
+        <input type="text" matInput [(ngModel)]="bookList.ISBN" placeholder="ISBN" required name="ISBN">
+      </mat-form-field>
+      <mat-form-field>
+        <input type="text" matInput [(ngModel)]="bookList.Author" placeholder="Author" required name="Author">
+      </mat-form-field>
+      <mat-form-field>
+        <input type="text" matInput [(ngModel)]="bookList.Title" placeholder="Title" required name="Title">
+      </mat-form-field>
+      <mat-form-field>
+        <input type="month" matInput [(ngModel)]="bookList.Year" placeholder="Date" required name="Year">
+      </mat-form-field>
+      <button type="submit" mat-raised-button color="warn" [disabled]="myForm.invalid">Update</button>
+    </form>
+  </div>
+</div>
